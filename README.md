@@ -1,6 +1,11 @@
+<img width="213" alt="Screenshot 2025-02-07 at 10 47 12" src="https://github.com/user-attachments/assets/186372cb-bc9e-42af-8c74-bf37c6dd0fe2" />
+
 ## About the project
 
 This is a react template for e-commerce that I use to customize and implement the oneentry sdk as a headless CMS
+
+<img width="1584" alt="Screenshot 2025-02-07 at 10 46 39" src="https://github.com/user-attachments/assets/3cbc29f0-5342-4442-ad2b-f02f3e05b5c8" />
+
 
 
 ## Getting Started
