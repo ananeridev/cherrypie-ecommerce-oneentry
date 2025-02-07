@@ -1,0 +1,131 @@
+.header-desk_type_6 {
+  border-bottom: $header-type-6-border-bottom;
+
+  .header-middle {
+    padding: $header-type-6-middle-padding;
+    border-bottom: $header-type-6-border-middle;
+  }
+
+  .logo {
+    width: $categories-nav-width;
+    margin-right: $container-padding-x;
+  }
+
+  .navigation {
+    margin: 0 $navigation-item-padding-x * 0.7 * -1;
+    padding: $header-type-6-nav-padding;
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 -$navigation-item-padding-x;
+    }
+  }
+
+  .navigation__item:first-child {
+    margin-left: 0;
+  }
+
+  .navigation__item:last-child {
+    margin-right: 0;
+  }
+
+  .header-search {
+    flex-grow: 1;
+    margin-left: $container-padding-x;
+    margin-right: $header-tools-item-padding-x;
+
+    @include media-breakpoint-up(xl) {
+      margin-right: $header-tools-item-padding-x + $header-tools-item-space;
+    }
+  }
+
+  .categories-nav {
+    width: $categories-nav-width * 0.65;
+    max-width: $categories-nav-width;
+    margin-right: $container-padding-x;
+
+    @include media-breakpoint-up(xxl) {
+      width: $categories-nav-width;
+    }
+  }
+
+  .categories-nav__list {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background-color: $color-white;
+    transition: all 0.3s ease;
+  }
+
+  .categories-nav__title {
+    padding: $header-type-6-nav-padding;
+    padding-left: $categories-nav-padding-x * 0.6;
+    padding-right: $categories-nav-padding-x * 0.6;
+
+    @include media-breakpoint-up(xxl) {
+      padding-left: $categories-nav-padding-x;
+      padding-right: $categories-nav-padding-x;
+    }
+  }
+
+  &.style2 {
+    .header-search {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+
+    .header-bottom {
+      background-color: var(--theme-color);
+
+      .navigation__list > .navigation__item {
+        > span {
+          color: $color-white;
+        }
+
+        > .navigation__link {
+          color: $color-white;
+        }
+      }
+    }
+
+    .navigation {
+      margin-right: 0;
+    }
+
+    .categories-nav__title {
+      padding-left: 0;
+      padding-right: 0;
+      cursor: pointer;
+      background-color: var(--theme-color);
+
+      & + .categories-nav__list {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .categories-nav:hover > .categories-nav__list {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.header_sticky-active {
+  .header-desk_type_6 {
+    .categories-nav__list {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .categories-nav {
+      &:hover {
+        .categories-nav__list {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

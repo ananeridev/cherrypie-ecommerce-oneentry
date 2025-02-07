@@ -1,0 +1,58 @@
+export const products41 = [
+  {
+    id: 463,
+    imgSrc: "/assets/images/home/demo19/product-1.jpg",
+    category: "Watches",
+    title: "Classic Neu Black",
+    price: 29,
+  },
+  {
+    id: 464,
+    imgSrc: "/assets/images/home/demo19/product-2.jpg",
+    category: "Watches",
+    title: "Multi Midnight",
+    price: 62,
+  },
+  {
+    id: 465,
+    imgSrc: "/assets/images/home/demo19/product-3.jpg",
+    category: "Watches",
+    title: "Wesse",
+    price: 17,
+  },
+  {
+    id: 466,
+    imgSrc: "/assets/images/home/demo19/product-4.jpg",
+    category: "Watches",
+    title: "Parigi Connect",
+    price: 129,
+  },
+  {
+    id: 467,
+    imgSrc: "/assets/images/home/demo19/product-5.jpg",
+    category: "Watches",
+    title: "Classic Neu Black",
+    price: 29,
+  },
+  {
+    id: 468,
+    imgSrc: "/assets/images/home/demo19/product-6.jpg",
+    category: "Watches",
+    title: "Multi Midnight",
+    price: 62,
+  },
+  {
+    id: 469,
+    imgSrc: "/assets/images/home/demo19/product-7.jpg",
+    category: "Watches",
+    title: "Wesse",
+    price: 17,
+  },
+  {
+    id: 470,
+    imgSrc: "/assets/images/home/demo19/product-8.jpg",
+    category: "Watches",
+    title: "Parigi Connect",
+    price: 129,
+  },
+];

@@ -1,0 +1,46 @@
+.quick-view {
+  width: 73.125rem;
+  max-width: calc(100% - 1rem);
+
+  .product-single {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__media {
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      img {
+        width: 100%;
+      }
+
+      @include media-breakpoint-up(md) {
+        flex: 0 0 47%;
+        max-width: 47%;
+      }
+    }
+
+    &__detail {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding: 1.875rem 1.25rem;
+
+      @include media-breakpoint-up(md) {
+        flex: 0 0 53%;
+        max-width: 53%;
+        padding: 3.5rem 2.5rem;
+      }
+    }
+  }
+
+  .modal-content {
+    overflow: hidden;
+
+    .btn-close {
+      position: absolute;
+      right: 0.75rem;
+      top: 1rem;
+      z-index: 12;
+    }
+  }
+}

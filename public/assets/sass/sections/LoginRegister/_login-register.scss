@@ -1,0 +1,24 @@
+.login-register {
+  width: 40.625rem;
+  max-width: 100%;
+  padding: 0 4.6875rem;
+  
+  @include media-breakpoint-down(md) {
+    padding: 0 1rem;
+  }
+
+  .nav-tabs {
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+    height: 3.75rem;
+    font-weight: 500;
+  }
+
+  p {
+    color: $secondary;
+  }
+}

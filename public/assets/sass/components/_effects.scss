@@ -1,0 +1,727 @@
+@include keyframes(bounceIn) {
+  from,20%,40%,60%,80%,to {
+        @include css3-prefix(animation-timing-function, cubic-bezier(.215,.61,.355,1));
+    }
+
+    0% {
+        opacity: 0;
+        @include transform(scale3d(.3,.3,.3));
+    }
+
+    20% {
+        @include transform(scale3d(1.1,1.1,1.1));
+    }
+
+    40% {
+        @include transform(scale3d(.9,.9,.9));
+    }
+
+    60% {
+        opacity: 1;
+        @include transform(scale3d(1.03,1.03,1.03));
+    }
+
+    80% {
+        @include transform(scale3d(.97,.97,.97));
+    }
+
+    to {
+        opacity: 1;
+        @include transform(scale3d(1,1,1));
+    }
+}
+
+@include keyframes(spin) {
+  0%   { 
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(360deg));
+  }
+}
+
+@include keyframes(marquee) {
+  0% {
+    @include transform(translateX(0) translateZ(0));
+  }
+
+  100% {
+    @include transform(translateX(-100%) translateZ(0));
+  }
+}
+
+@include keyframes(marquee-right) {
+  0% {
+    @include transform(translateX(-100%) translateZ(0));
+  }
+
+  100% {
+    @include transform(translateX(0) translateZ(0));
+  }
+}
+
+@include keyframes(mouseoverLineContainer) {
+  0% {
+    @include transform(translateX(0%));
+  }
+
+  20% {
+    @include transform(translateX(100%));
+  }
+
+  21% {
+    @include transform(translateX(-110%));
+  }
+
+  100% {
+    @include transform(translateX(0%));
+  }
+}
+
+@include keyframes(snt_shake) {
+  from, to {
+    @include transform(translate3d(0,0,0));
+  }
+
+  17%, 50%, 83% {
+    @include transform(translate3d(-5px,0,0));
+  }
+
+  33%, 67% {
+    @include transform(translate3d(5px,0,0));
+  }
+}
+
+@include keyframes(snt_pulse) {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@include keyframes(snt_pulse_no_scale) {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.effect {
+  position: relative;
+
+  &:before, &:after {
+    pointer-events: none;
+  }
+}
+
+.normal-effect {
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    opacity: 0;
+    @include transition(opacity .3s ease);
+    z-index: 2;
+  }
+
+  &:hover::before {
+    opacity: .3;
+  }
+
+  &.dark-bg::before {
+    background-color: #000;
+  }
+}
+
+.plus-zoom {
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    @include transition(all .5s ease);
+    z-index: 2;
+  }
+
+  &:hover {
+    &::before {
+        width: 0;
+        background-color: rgba(255,255,255,.5);
+    }
+
+    &::after {
+        height: 0;
+        background-color: rgba(255,255,255,.5);
+    }
+  }
+}
+
+.overlay {
+  &-plus, &-cross, &-horizontal, &-vertical {
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        @include transition(all .5s ease);
+        z-index: 2;
+        background-color: rgba(255,255,255,.15);
+    }
+
+    &.overlay-dark {
+      &::before, &::after {
+        background-color: rgba(0,0,0,.15);
+      }
+    }
+  }
+
+  &-plus {
+    &::before, &::after {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &:not(:hover) {
+      &::before {
+          width: 0;
+      }
+
+      &::after {
+          height: 0;
+      }
+    }
+  }
+
+  &-cross {
+    &::before {
+        top: 0;
+        left: 0;
+    }
+
+    &::after {
+        bottom: 0;
+        right: 0;
+    }
+
+    &:not(:hover) {
+      &::before, &::after {
+          width: 0;
+          height: 0;
+      }
+    }
+  }
+
+  &-horizontal {
+    &::before {
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    &::after {
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:not(:hover) {
+      &::before, &::after {
+          width: 0;
+      }
+    }
+  }
+
+  &-vertical {
+    &::before {
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    &::after {
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:not(:hover) {
+      &::before, &::after {
+          height: 0;
+      }
+    }
+  }
+
+  &-fade {
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        @include transition(all .5s ease);
+        z-index: 2;
+        background-color: rgba(255,255,255,.3);
+    }
+
+    &.overlay-dark {
+      &::before {
+        background-color: rgba(0,0,0,.3);
+      }
+    }
+
+    &:not(:hover) {
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+  &-scale {
+    &-left-top, &-right-top, &-left-bottom, &-right-bottom, &-left, &-right, &-top, &-bottom, &-center {
+      &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          margin: auto;
+          @include transition(all .5s ease);
+          z-index: 2;
+          background-color: rgba(255,255,255,.3);
+      }
+
+      &.overlay-dark {
+        &::before {
+          background-color: rgba(0,0,0,.3);
+        }
+      }
+    }
+
+    &-left-top {
+      &::before {
+          top: 0;
+          left: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+          width: 0;
+            height: 0;
+        }
+      }
+    }
+
+    &-right-top {
+      &::before {
+          top: 0;
+          right: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+          width: 0;
+            height: 0;
+        }
+      }
+    }
+
+    &-left-bottom {
+      &::before {
+          bottom: 0;
+          left: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+          width: 0;
+            height: 0;
+        }
+      }
+    }
+
+    &-right-bottom {
+      &::before {
+          bottom: 0;
+          right: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+          width: 0;
+            height: 0;
+        }
+      }
+    }
+
+    &-center {
+      &::before {
+        top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: auto;
+          height: auto;
+      }
+
+      &:not(:hover) {
+        &::before {
+            top: 50%;
+            left: 50%;
+            right: 50%;
+            bottom: 50%;
+        }
+      }
+    }
+
+    &-left {
+      &::before {
+          top: 0;
+          left: 0;
+          bottom: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+          width: 0;
+        }
+      }
+    }
+
+    &-right {
+      &::before {
+          top: 0;
+          right: 0;
+          bottom: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+          width: 0;
+        }
+      }
+    }
+
+    &-top {
+      &::before {
+          top: 0;
+          left: 0;
+          right: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+            height: 0;
+        }
+      }
+    }
+
+    &-bottom {
+      &::before {
+          bottom: 0;
+          left: 0;
+          right: 0;
+      }
+
+      &:not(:hover) {
+        &::before {
+            height: 0;
+        }
+      }
+    }
+  }
+}
+
+.border {
+  &-zoom {
+      overflow: hidden;
+  
+    &::before, &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include transition(all .5s ease);
+        z-index: 2;
+        opacity: 0;
+    }
+
+    &::before {
+        background-color: #000;
+    }
+
+    &::after {
+        top: -15px;
+        bottom: -15px;
+        left: -15px;
+        right: -15px;
+        border: 2px solid #fff;
+    }
+
+    &:hover {
+      &::before {
+          opacity: .3;
+      }
+
+      &::after {
+          top: 15px;
+          bottom: 15px;
+          left: 15px;
+          right: 15px;
+          opacity: 1;
+      }
+    }
+  }
+
+  &-plus, &-scale {
+      background-color: #000;
+
+    .image-effect, img {
+        @include transition(all .3s ease);
+    }
+
+    &:hover {
+      .image-effect, img {
+          opacity: .7;
+      }
+    }
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        z-index: 2;
+        border: solid #fff;
+        top: 15px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        margin: auto;
+        @include transition(all .5s ease);
+    }
+
+    &::before {
+        border-width: 2px 0;
+    }
+
+    &::after {
+        border-width: 0 2px;
+    }
+
+    &.s2 {
+      &::before {
+          top: 30px;
+          bottom: 30px;
+      }
+
+      &::after {
+          left: 30px;
+          right: 30px;
+      }
+    }
+  }
+
+  &-scale:not(:hover) {
+    &::before {
+        left: 50%;
+        right: 50%;
+    }
+
+    &::after {
+        top: 50%;
+        bottom: 50%;
+    }
+  }
+
+  &-plus:not(:hover) {
+    &::before {
+        top: 30%;
+        bottom: 30%;
+        opacity: 0;
+    }
+
+    &::after {
+        left: 30%;
+        right: 30%;
+        opacity: 0;
+    }
+  }
+}
+
+.flashlight {
+  &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-color: #000;
+      z-index: 2;
+  }
+
+  &::before {
+      left: 0;
+      width: 100%;
+  }
+
+  &::after {
+      right: 0;
+      width: 0;
+      opacity: .5;
+  }
+
+  &:hover {
+    &::before {
+        width: 0;
+        @include transition(all .5s ease);
+    }
+
+    &::after {
+        width: 100%;
+        @include transition(all .8s ease);
+    }
+  }
+}
+
+.bounce-in {
+  &:hover {
+    .image-effect, img {
+        @include animation(bounceIn .5s ease);
+    }
+  }
+}
+
+.faded-in {
+  .image-effect, img {
+      @include transition(opacity .2s ease);
+  }
+
+  &:not(:hover) {
+    .image-effect, img {
+        opacity: .3
+    }
+  }
+}
+
+.background {
+  &-zoom {
+      overflow: hidden;
+
+    .image-effect, img {
+        @include transition(all .5s ease);
+    }
+
+    &.slow {
+      .image-effect, img {
+        @include transition(all 10s ease);
+      }
+    }
+
+    &:hover {
+      .image-effect, img {
+          @include css3-prefix('transform', scale(1.1));
+      }
+    }
+  }
+
+  &-slide {
+    overflow: hidden;
+
+    .image-effect, img {
+        position: relative;
+        width: calc(100% + 60px);
+        max-width: calc(100% + 60px);
+        left: 50%;
+        @include css3-prefix('transform', translateX(-50%));
+        @include transition(all .4s ease);
+    }
+
+    &:hover {
+      .image-effect, img {
+          margin-left: 30px
+      }
+    }
+  }
+}
+
+.grayscale {
+    overflow: hidden;
+
+  .image-effect, img {
+    @include css3-prefix('filter', grayscale(100%));
+      @include transition(all .5s ease);
+  }
+
+  &.slow {
+    .image-effect, img {
+      @include transition(all 10s ease);
+    }
+  }
+
+  &:hover {
+    .image-effect, img {
+        @include css3-prefix('filter', grayscale(0));
+    }
+  }
+
+  &.revert {
+    .image-effect, img {
+      @include css3-prefix('filter', grayscale(0));
+    }
+
+    &:hover {
+      .image-effect, img {
+          @include css3-prefix('filter', grayscale(100%));
+      }
+    }
+  }
+}
+
+.rotate{
+  &-left, &-right {
+      overflow: hidden;
+
+    .image-effect, img {
+        @include transition(all .7s ease);
+    }
+  }
+
+  &-left {
+    &:hover {
+      .image-effect, img {
+          @include css3-prefix('transform', scale(1.2) rotate(-5deg));
+        }
+      }
+  }
+
+  &-right {
+    &:hover {
+      .image-effect, img {
+          @include css3-prefix('transform', scale(1.2) rotate(5deg));
+        }
+      }
+  }
+}

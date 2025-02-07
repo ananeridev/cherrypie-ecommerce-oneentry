@@ -1,0 +1,71 @@
+.video-banner {
+  height: 100vh;
+  max-height: 43.75rem;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+  }
+}
+
+.btn-video-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.125rem solid;
+  border-radius: 4rem;
+  padding-left: 0.125rem;
+  transition: all .3s ease;
+  background-color: transparent;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+  .flaticon {
+    font-size: 1rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 4.375rem;
+    height: 4.375rem;
+    border: 0.25rem solid;
+    padding-left: 0.25rem;
+
+    .flaticon {
+      font-size: 1.25rem;
+    }
+  }
+
+  svg {
+    display: block;
+
+    &.btn-pause {
+      display: none;
+    }
+    
+    &.btn-play {
+      margin-left: 0.3rem;
+    }
+  }
+
+  &.playing {
+    svg {
+      &.btn-play {
+        display: none;
+      }
+
+      &.btn-pause {
+        display: block;
+      }
+    }
+  }
+}

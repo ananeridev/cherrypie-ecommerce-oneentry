@@ -1,0 +1,11 @@
+.shop-banner {
+  min-height: 18.5rem;
+
+  @include media-breakpoint-up(xl) {
+    min-height: 21.5rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    min-height: 26.25rem;
+  }
+}

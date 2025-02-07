@@ -1,0 +1,12 @@
+.header-desk_type_5 {
+  padding: $header-type-5-padding;
+
+  .logo {
+    margin-right: $header-type-5-logo-space;
+  }
+
+  .header-search {
+    width: $header-type-5-search-box-width;
+    margin-right: auto;
+  }
+}

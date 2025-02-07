@@ -1,0 +1,26 @@
+.star-rating {
+  &__star-icon {
+    cursor: pointer;
+    transition: all .1s ease;
+    fill: $rating-star-color;
+
+    path {
+      pointer-events: none;
+    }
+
+    &.is-selected {
+      fill: $rating-star_selected-color;
+    }
+
+    &.is-overed {
+      fill: $rating-star_selected-color;
+
+      & ~ .star-rating__star-icon:not(.is-overed):not(.is-selected) {
+        fill: $rating-star-color;
+      }
+      & ~ .star-rating__star-icon.is-selected:not(.is-overed) {
+        fill: $rating-star_overed-color;
+      }
+    }
+  }
+}

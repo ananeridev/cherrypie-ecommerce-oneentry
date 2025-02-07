@@ -1,0 +1,16 @@
+.slideshow-social-follow {
+  width: $full-section-padding-x;
+  z-index: 1;
+}
+
+.slideshow-social-follow__title {
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+.slideshow-scroll {
+  width: $full-section-padding-x;
+  transform: rotate(-90deg) translateX(30%);
+  white-space: nowrap;
+  z-index: 3;
+}

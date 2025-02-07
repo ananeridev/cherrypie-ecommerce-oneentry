@@ -1,0 +1,31 @@
+.header-desk_type_2 {
+  padding: $header-type-2-padding;
+
+  .logo {
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .navigation {
+    flex: 1;
+  }
+
+  .header-tools {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  @include media-breakpoint-between(lg, xxl) {
+    .navigation__link {
+      padding: $navigation-item-padding-y $navigation-item-padding-x * 0.5;
+
+      &:after {
+        left: $navigation-item-padding-x * 0.5;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding: $header-type-2-padding-xxl;
+  }
+}

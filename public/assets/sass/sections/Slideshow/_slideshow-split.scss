@@ -1,0 +1,21 @@
+.slideshow_split {
+  @include media-breakpoint-down(md) {
+    height: auto;
+  }
+}
+
+.slide-split_text {
+  flex: 2 2 40%;
+
+  @include media-breakpoint-down(xxl) {
+    flex: 2 2 50%;
+  }
+}
+
+.slide-split_media {
+  flex: 1 1 60%;
+
+  @include media-breakpoint-down(xxl) {
+    flex: 2 2 50%;
+  }
+}

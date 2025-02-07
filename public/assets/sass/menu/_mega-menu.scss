@@ -1,0 +1,17 @@
+.mega-menu {
+  border-top: $mega-menu-border;
+  @include create-menu($mega-menu-padding, 100%);
+}
+
+.sub-menu__list + .sub-menu__title {
+  margin-top: 1.875rem;
+}
+
+.mega-menu__media {
+  flex: 2 0 0;
+  max-width: 25.625rem;
+}
+
+.mega-menu__img {
+  max-width: 100%;
+}

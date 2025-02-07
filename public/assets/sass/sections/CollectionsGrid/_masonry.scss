@@ -1,0 +1,25 @@
+.collections-grid_masonry {
+  @include media-breakpoint-up(lg) {
+    height: 30rem;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    height: 37.5rem;
+  }
+
+  .collection-grid__item {
+    height: 17.8125rem;
+
+    @include media-breakpoint-up(lg) {
+      height: auto;
+    }
+  }
+}
+
+.collection-grid__item {
+  margin-bottom: $container-padding-x;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+  }
+}

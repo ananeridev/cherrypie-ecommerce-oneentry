@@ -1,0 +1,73 @@
+.form-floating {
+  position: relative;
+
+  > .form-control,
+  > .form-select {
+    height: $form-floating-height;
+    @include text-padding($input-padding-y-lg, $input-padding-x-lg);
+  }
+
+  > label {
+    position: absolute;
+    top: 1rem;
+    left: 0.75rem;
+    padding: 0 0.5rem;
+    pointer-events: none;
+    border: $input-border-width solid transparent; // Required for aligning label's text with the input as it affects inner box model
+    transform-origin: 0 0;
+    @include transition($form-floating-transition);
+    color: $secondary;
+  }
+
+  // stylelint-disable no-duplicate-selectors
+  > .form-control {
+    &::placeholder {
+      color: transparent;
+    }
+
+    // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
+    &:-webkit-autofill {
+      padding-top: $form-floating-input-padding-t;
+      padding-bottom: $form-floating-input-padding-b;
+    }
+  }
+
+  > .form-select {
+    padding-top: $form-floating-input-padding-t;
+    padding-bottom: $form-floating-input-padding-b;
+  }
+
+  > .form-control:focus,
+  > .form-control:not(:placeholder-shown),
+  > .form-select {
+    ~ label {
+      background-color: #ffffff;
+      color: $primary;
+      transform: $form-floating-label-transform;
+    }
+  }
+  // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
+  > .form-control:-webkit-autofill {
+    ~ label {
+      background-color: #ffffff;
+      color: $primary;
+      transform: $form-floating-label-transform;
+    }
+  }
+  // stylelint-enable no-duplicate-selectors
+}
+
+.form-label-fixed {
+  position: relative;
+
+  > .form-label {
+    position: absolute;
+    top: -$fixed-label-padding-y - $font-size-base * $line-height-base / 2;
+    left: 1rem;
+    margin: 0;
+    padding: $fixed-label-padding-y $fixed-label-padding-right $fixed-label-padding-y $fixed-label-padding-right;
+    background-color: $fixed-label-background;
+    color: $fixed-label-color;
+    z-index: 1;
+  }
+}

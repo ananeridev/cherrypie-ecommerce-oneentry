@@ -1,0 +1,12 @@
+.header-desk_type_3 {
+  padding: $header-type-3-padding;
+
+  .logo {
+    margin-right: $header-type-3-logo-space;
+  }
+
+  .header-tools {
+    margin-left: auto;
+    margin-right: -($header-tools-item-padding-x);
+  }
+}

@@ -1,0 +1,103 @@
+.navigation__list {
+  margin-bottom: 0;
+}
+
+.navigation__item {
+  @include media-breakpoint-up(lg) {
+    margin: 0 5px;
+
+    &:hover {
+      &::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        width: 7.5rem;
+        height: 100%;
+        background-color: transparent;
+        content: '';
+      }
+    }
+  }
+}
+
+.navigation__link {
+  display: inline-block;
+  position: relative;
+  padding-top: $navigation-item-padding-y;
+  padding-bottom: $navigation-item-padding-y;
+  color: $nav-link-color;
+  font-weight: $nav-link-font-weight;
+  line-height: $navigation-item-line-height;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: $navigation-item-padding-x-sm;
+    width: 0;
+    height: 2px;
+    transition: $nav-link-underline-transition-s;
+    background-color: currentColor;
+  }
+
+  &:hover {
+    &:after {
+      width: $nav-link-active-bottom-width;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-right: $navigation-item-padding-x-sm;
+    padding-left: $navigation-item-padding-x-sm;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-right: $navigation-item-padding-x;
+    padding-left: $navigation-item-padding-x;
+
+    &:after {
+      left: $navigation-item-padding-x;
+    }
+  }
+}
+
+.sub-menu__title {
+  display: block;
+  margin-bottom: .75rem;
+  color: $sub-menu-title-color;
+  font-weight: $font-weight-heading;
+  text-transform: uppercase;
+}
+
+.menu-link {
+  display: inline-block;
+  position: relative;
+  padding: $menu-link-padding-y $menu-link-padding-x;
+  color: $sub-menu-link-color;
+  line-height: $menu-link-line-height;
+}
+
+// Menu link underlined small
+.menu-link_us-s {
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $menu-link-line-height + $menu-link-padding-y;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: $nav-link-underline-transition-s;
+    background-color: currentColor;
+  }
+
+  &:hover,
+  &.menu-link_active {
+    &:after {
+      width: $nav-link-active-bottom-width;
+    }
+  }
+}

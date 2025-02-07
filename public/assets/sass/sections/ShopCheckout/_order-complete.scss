@@ -1,0 +1,68 @@
+.order-complete {
+  width: 56.25rem;
+  max-width: 100%;
+  margin: 3.125rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-bottom: 1.25rem;
+    }
+
+    h3 {
+      font-size: 2.1875rem;
+      text-align: center;
+    }
+
+    p {
+      color: $secondary;
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  .order-info {
+    width: 100%;
+    border: 2px dashed $secondary;
+    padding: 2.5rem;
+    display: flex;
+    gap: 1rem;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex-grow: 1;
+
+      label {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: $secondary;
+      }
+
+      span {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .checkout__totals {
+    width: 100%;
+
+    .checkout-cart-items thead th:last-child {
+      text-align: right;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@import "bootstrap/bootstrap";
+@import "bootstrap-slider/bootstrap-slider.scss";
+
+@import "settings/variables";
+@import "settings/helpers";
+@import "settings/theme";
+@import "settings/typography";
+
+@import "mixins/mixins";
+
+@import "settings/animations";
+@import "layout/layout";
+
+@import "components/close";
+@import "components/accordions";
+@import "components/tabs";
+@import "components/checkbox";
+@import "components/tables";
+@import "components/alert";
+@import "components/buttons";
+@import "components/forms";
+@import "components/progressbar";
+@import "components/categories-nav";
+@import "components/product-card";
+@import "components/aside-popup";
+@import "components/search-popup";
+@import "components/cart-drawer";
+@import "components/star-rating";
+@import "components/modals";
+@import "components/effects";
+
+@import "menu/menu";
+
+@import "sections/Header/header";
+@import "sections/Footer/footer";
+@import "sections/Footer/footer-mobile-fixed";
+@import "sections/Slideshow/slideshow";
+@import "sections/CollectionsGrid/collections-grid";
+@import "sections/ProductsGrid/products-grid";
+@import "sections/ProductsGrid/products-masonry";
+@import "sections/DealTimer/deal-timer";
+@import "sections/ProductsCarousel/products-carousel";
+@import "sections/Instagram/instagram";
+@import "sections/ServicePromotion/service-promotion";
+@import "sections/ShopBanner/shop-banner";
+@import "sections/ShopAccessories/shop-accessories";
+@import "sections/ShopAccessories/shop-pagination";
+@import "sections/ShopSidebar/shop-sidebar";
+@import "sections/ShopCategories/shop-categories";
+@import "sections/Newsletter/newsletter";
+@import "sections/ProductSingle/product-single";
+@import "sections/ProductSingle/quick-view";
+@import "sections/ShopCheckout/shop-checkout";
+@import "sections/MyAccount/my-account";
+@import "sections/Blog/blog";
+@import "sections/About/about";
+@import "sections/BrandsCarousel/brands-carousel";
+@import "sections/GoogleMap/google-map";
+@import "sections/ContactUs/contact-us";
+@import "sections/Lookbook/lookbook";
+@import "sections/StoreLocation/store-location";
+@import "sections/LoginRegister/login-register";
+@import "sections/PageNotFound/page-not-found";
+@import "sections/ComingSoon/coming-soon";
+@import "sections/ImageBanner/image-banner";
+@import "sections/CategoryBanner/category-banner";
+@import "sections/CategoryMasonry/category-masonry";
+@import "sections/VideoBanner/video-banner";
+@import "sections/Testimonial/testimonial";
+@import "./custom.scss";
+// @import "../css/product-single.css";

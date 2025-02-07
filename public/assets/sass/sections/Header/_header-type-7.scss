@@ -1,0 +1,49 @@
+.header-desk_type_7 {
+  .header-top {
+    padding: $header-type-7-top-padding;
+    color: $header-type-7-top-color;
+    background-color: $header-type-7-top-bg;
+  }
+
+  .header-bottom {
+    padding: $header-type-7-bottom-padding;
+    color: $header-type-7-bottom-color;
+    background-color: $header-type-7-bottom-bg;
+  }
+
+  .logo {
+    margin-right: $header-type-7-logo-space;
+  }
+
+  .header-search {
+    width: $header-type-7-search-box-width;
+    margin-right: auto;
+  }
+
+  .navigation {
+    width: 100%;
+  }
+
+  .navigation__link,
+  .header-tools__item {
+    color: inherit;
+  }
+
+  .navigation__item {
+    &:first-child {
+      margin-left: 0;
+
+      .navigation__link {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      .navigation__link {
+        padding-right: 0;
+      }
+    }
+  }
+}

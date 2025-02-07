@@ -1,0 +1,85 @@
+.accordion-item_shadow {
+  @include box-shadow($accordion-box-shadow);
+}
+
+.accordion-button {
+  padding: $accordion-button-padding-top $accordion-button-padding-x $accordion-button-padding-bottom;
+  border: $accordion-border-width solid $accordion-border-color;
+  color: $accordion-button-active-color;
+  background-color: $accordion-button-active-bg;
+  @include font-size($content-title-font-size);
+  font-weight: $accordion-button-font-weight;
+  line-height: $accordion-button-line-height;
+  outline: none;
+
+  &::after {
+    content: none;
+  }
+
+  &.collapsed {
+    background-color: $accordion-button-bg;
+    color: $accordion-button-color;
+
+    .accordion-button__icon {
+      transform: rotate(0deg);
+
+      .svg-path-horizontal {
+        opacity: 1;
+      }
+
+      &.type2 {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.accordion-button__icon {
+  width: $accordion-icon-width;
+  height: $accordion-icon-width;
+  margin-left: auto;
+  fill: $accordion-icon-color;
+  transform: rotate(90deg);
+  @include transition($accordion-icon-transition);
+
+  .svg-path-vertical {
+    transform: rotate(90deg);
+    transform-origin: center;
+  }
+
+  .svg-path-horizontal {
+    @include transition($accordion-icon-transition);
+    opacity: 0;
+  }
+
+  &.type2 {
+    transform: rotate(0deg);
+  }
+}
+
+.accordion-body {
+  padding: $accordion-body-padding-top $accordion-padding-x $accordion-body-padding-bottom;
+}
+
+.faq-accordion {
+  .accordion {
+    &-item {
+      margin-bottom: 1.25rem;
+    }
+
+    &-button {
+      border: 0;
+      border-bottom: 1px solid $border-color;
+      padding: 0.625rem 0;
+      text-align: left;
+    }
+
+    &-collapse {
+      border: 0;
+    }
+
+    &-body {
+      padding: 1.5rem 0;
+    }
+  }
+}

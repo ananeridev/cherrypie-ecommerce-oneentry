@@ -1,0 +1,262 @@
+.footer-top {
+  padding-top: 6.2rem;
+
+  .block-newsletter {
+    max-width: 47rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+.footer-middle {
+  padding-top: 3.125rem;
+  padding-bottom: 1.625rem;
+
+  .logo {
+    margin-bottom: 2.75rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding-top: $footer-middle-padding-top * 0.6;
+    padding-bottom: $footer-middle-padding-bottom * 0.6;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding-top: $footer-middle-padding-top;
+    padding-bottom: $footer-middle-padding-bottom;
+  }
+}
+
+.footer-column {
+  flex-grow: 1;
+}
+
+.footer-address {
+  margin-bottom: $font-size-base;
+}
+
+.footer__social-link {
+  padding: .5rem $footer-social-link-padding-x;
+  color: $footer-social-link-color;
+
+  .svg-icon {
+    fill: currentColor;
+  }
+}
+
+.footer-newsletter__form {
+  .btn-link {
+    padding-right: $input-padding-x;
+  }
+}
+
+.footer-bottom {
+  padding-top: 1.25rem;
+  padding-bottom: 1rem;
+  border-top: $footer-bottom-border;
+}
+
+.footer {
+  background-color: $footer-type-1-bg;
+  color: $footer-type-1-color;
+
+  .sub-menu__title {
+    margin-bottom: 0.875rem;
+    color: $footer-menu-title-color;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  .menu-link {
+    margin-top: 3px;
+    margin-bottom: 2px;
+  }
+
+  .social-links {
+    margin-left: -$footer-social-link-padding-x;
+  }
+
+  .form-select {
+    color: inherit;
+    background-image: escape-svg($svg-arrow-up-bg);
+
+    &:focus {
+      box-shadow: none;
+      border-color: transparent;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
+
+    &.color-white {
+      background-image: escape-svg($svg-arrow-up-white-bg);
+
+      option {
+        color: $body-color;
+      }
+    }
+  }
+
+  .service-promotion.horizontal {
+    border-bottom: 1px solid #cfcdcd;
+  }
+}
+
+.footer_type_1 {
+  &.dark {
+    background-color: $footer-type-2-dark-bg;
+    color: $footer-type-2-dark-color;
+
+    .sub-menu__title {
+      color: $footer-menu-title-color;
+    }
+
+    .menu-link {
+      color: $footer-type-2-dark-menu-link-color
+    }
+
+    .form-select {
+      background-image: escape-svg($footer-type-2-dark-form-select-bg);
+    }
+
+    .footer-select__option {
+      background-color: $footer-type-2-dark-bg;
+    }
+
+    .footer-bottom {
+      border-color: $footer-type-2-dark-border-color;
+    }
+
+    .footer__social-link {
+      &:hover {
+        color: $footer-social-link-active-color;
+      }
+    }
+
+    .service-promotion.horizontal {
+      border-bottom-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+.footer_type_2 {
+  background-color: $footer-type-2-bg;
+  color: $footer-type-2-color;
+
+  .form-select {
+    background-image: escape-svg($footer-type-2-form-select-bg);
+  }
+
+  .footer-select__option {
+    background-color: $footer-type-2-bg;
+  }
+
+  .footer-bottom {
+    border-color: $footer-type-2-border-color;
+  }
+
+  .sub-menu__title {
+    color: $primary;
+  }
+
+  &.dark {
+    background-color: $footer-type-2-dark-bg;
+    color: $footer-type-2-dark-color;
+
+    .sub-menu__title {
+      color: $footer-menu-title-color;
+    }
+
+    .menu-link {
+      color: $footer-type-2-dark-menu-link-color
+    }
+
+    .form-select {
+      background-image: escape-svg($footer-type-2-dark-form-select-bg);
+    }
+
+    .footer-select__option {
+      background-color: $footer-type-2-dark-bg;
+    }
+
+    .footer-bottom {
+      border-color: $footer-type-2-dark-border-color;
+    }
+
+    .footer__social-link {
+      &:hover {
+        color: $footer-social-link-active-color;
+      }
+    }
+  }
+
+  &.bordered {
+    border-top: 1px solid $footer-type-2-border-color;
+  }
+}
+
+.footer_type_3 {
+  background-color: #fff;
+
+  .footer-middle {
+    padding: 0.875rem 0;
+    border-top: $footer-bottom-border;
+  }
+}
+
+.app-download-link {
+  background: $secondary;
+  display: flex;
+  width: 14.1875rem;
+  height: 4.375rem;
+  border-radius: 0.25rem;
+  color: $color-white;
+  align-items: center;
+  padding: 0.875rem;
+  line-height: 1.4;
+  gap: 1.5rem;
+  transition: all .3s ease;
+
+  .app-download-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8125rem;
+
+    strong {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  &:hover {
+    color: $color-white;
+    background-color: $primary;
+  }
+
+  &.no-bg {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    color: $primary;
+    background-color: transparent;
+    padding: 0;
+    gap: 1rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .footer-store-info {
+    width: 24%;
+  }
+
+  .footer-menu {
+    width: 17%;
+  }
+
+  .footer-newsletter {
+    width: 25%;
+  }
+}

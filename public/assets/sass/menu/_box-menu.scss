@@ -1,0 +1,5 @@
+.box-menu {
+  display: flex;
+  display: -ms-flexbox;
+  @include create-menu($box-menu-padding, $box-menu-width);
+}

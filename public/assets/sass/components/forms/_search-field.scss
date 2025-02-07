@@ -1,0 +1,58 @@
+$search-icon-width:  1rem;
+$search-icon-height: 1rem;
+$search-icon-color:   #767676;
+$search-icon-bg:     url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(#clip0_137_2221)'><path d='M7.04606 0C3.16097 0 0 3.16097 0 7.04606C0 10.9314 3.16097 14.0921 7.04606 14.0921C10.9314 14.0921 14.0921 10.9314 14.0921 7.04606C14.0921 3.16097 10.9314 0 7.04606 0ZM7.04606 12.7913C3.87816 12.7913 1.30081 10.214 1.30081 7.04609C1.30081 3.87819 3.87816 1.30081 7.04606 1.30081C10.214 1.30081 12.7913 3.87816 12.7913 7.04606C12.7913 10.214 10.214 12.7913 7.04606 12.7913Z' fill='#{$search-icon-color}'/><path d='M15.8095 14.8897L12.0805 11.1607C11.8264 10.9066 11.4149 10.9066 11.1608 11.1607C10.9067 11.4146 10.9067 11.8265 11.1608 12.0804L14.8898 15.8094C15.0168 15.9364 15.1831 16 15.3496 16C15.5159 16 15.6824 15.9364 15.8095 15.8094C16.0636 15.5555 16.0636 15.1436 15.8095 14.8897Z' fill='#{$search-icon-color}'/></g><defs><clipPath id='clip0_137_2221'><rect width='16' height='16' fill='white'/></clipPath></defs></svg>");
+
+.search-field {
+  .search-field__actor {
+    background-color: $input-bg;
+  }
+}
+
+.search-field__arrow-down {
+  background-image: escape-svg($form-select-indicator);
+  background-position: $form-select-bg-position;
+  background-repeat: no-repeat;
+  background-size: $form-select-bg-size;
+  cursor: pointer;
+}
+
+.filters-container {
+  border: $input-border-width solid $input-border-color;
+  padding: $search-field-padding-y $search-field-padding-x;
+}
+
+.search-field__input-wrapper {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    @include center-inside-box;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: $search-icon-width;
+    height: $search-icon-height;
+    background: transparent escape-svg($search-icon-bg) center / $search-icon-width auto no-repeat;
+  }
+}
+
+.search-field__input {
+  width: 100%;
+  outline: none;
+}
+
+.search-suggestion {
+  margin: $search-suggestion-margin-y 0;
+}
+
+.search-suggestion__item {
+  width: 100%;
+  padding: $search-suggestion-item-padding-y 0;
+  color: $body-color-secondary;
+  cursor: pointer;
+
+  &:hover {
+    color: shift-color($body-color-secondary, 50%);
+  }
+}

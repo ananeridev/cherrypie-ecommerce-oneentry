@@ -1,0 +1,6 @@
+@mixin center-inside-box {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY( calc(-50% + 2px ));
+  transform: translateY( calc(-50% + 2px ));
+}

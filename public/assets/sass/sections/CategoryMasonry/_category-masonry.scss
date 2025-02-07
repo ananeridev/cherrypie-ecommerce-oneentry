@@ -1,0 +1,18 @@
+.category-masonry {
+  &__title {
+    @include font-size(3.125rem);
+    line-height: 1.5;
+  }
+
+  &__item {
+    position: relative;
+
+    &-category {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(-90deg) translate(-100%, -100%);
+      transform-origin: left top;
+    }
+  }
+}

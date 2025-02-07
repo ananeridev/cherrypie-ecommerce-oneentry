@@ -1,0 +1,63 @@
+//
+// Base styles
+//
+
+.alert {
+  position: relative;
+  padding: $alert-padding-top $alert-padding-x $alert-padding-bottom;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border-width solid transparent;
+  font-weight: $alert-font-weight;
+  @include border-radius($alert-border-radius);
+}
+
+// Headings for larger alerts
+.alert-heading {
+  // Specified to prevent conflicts of changing $headings-color
+  color: inherit;
+}
+
+// Provide class for links that match alerts
+.alert-link {
+  font-weight: $alert-link-font-weight;
+}
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissible {
+  padding-right: $alert-dismissible-padding-r;
+
+  // Adjust close link position
+  .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $stretched-link-z-index + 1;
+    padding: $alert-padding-top * 1.1 $alert-padding-x $alert-padding-bottom;
+  }
+}
+
+
+// scss-docs-start alert-modifiers
+// Generate contextual modifier classes for colorizing the alert.
+
+@each $state, $value in $alert-colors {
+  $background: map-get($value, "bg");
+  $border: map-get($value, "bg");
+  $color: map-get($value, "color");
+  // @if (contrast-ratio($background, $color) < $min-contrast-ratio) {
+  //   $color: mix($value, color-contrast($background), abs($alert-color-scale));
+  // }
+
+  .alert-#{$state} {
+    @include alert-variant($background, $border, $color);
+
+    .btn-close {
+      background: transparent escape-svg(url("data:image/svg+xml,<svg viewBox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.48881 15.5962L16.0954 4.98963L17.5096 6.40384L6.90302 17.0104L5.48881 15.5962Z' fill='#{$color}'/><path d='M16.0954 17.7176L4.7817 6.40384L6.19592 4.98963L17.5096 16.3033L16.0954 17.7176Z' fill='#{$color}'/></svg>")) center / $btn-close-width auto no-repeat; // include transparent for button elements
+    }
+  }
+}
+// scss-docs-end alert-modifiers

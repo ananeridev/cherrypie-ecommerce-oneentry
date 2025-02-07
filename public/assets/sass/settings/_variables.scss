@@ -1,0 +1,649 @@
+/*-----------------------------------------------*/
+/*------------------ Base Colors ----------------*/
+/*-----------------------------------------------*/
+$color-steelblue: #4780aa;
+$color-cyan: #cde9f6;
+$color-gray-900: #222222;
+$color-gray-500: #767676;
+$color-gray-300: #e4e4e4;
+$color-gray-200: #eeeeee;
+$color-gray-100: #faf9f8;
+$color-darkgreen: #5b7052;
+$color-green: #def2d7;
+$color-red-900: #ab3331;
+$color-red-800: #c32929;
+$color-red-700: #d6001c;
+$color-red-200: #ecc8c5;
+$color-white: #ffffff;
+$color-yellow: #f7f3d7;
+$color-olive: #927238;
+$color-brick: #704634;
+$color-beige: #b9a16b;
+$color-dark-purple: #2f2d51;
+$color-dust: #ddc2bd;
+
+$primary: $color-gray-900;
+$secondary: $color-gray-500;
+$third: $color-beige;
+$success: $color-green;
+$success-text: $color-darkgreen;
+$info: $color-cyan;
+$info-text: $color-steelblue;
+$warning: $color-yellow;
+$warning-text: $color-olive;
+$danger: $color-red-200;
+$danger-text: $color-red-900;
+$light: $color-gray-300;
+$lighter: $color-gray-100;
+$dark: $color-gray-900;
+
+$heading-color: $primary;
+$body-color: $primary;
+$body-color-secondary: $secondary;
+
+$body-bg: $color-white;
+$color-component-active: $color-white;
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "lighter": $lighter,
+  "dark": $dark,
+  "red": $color-red-800,
+  "beige": $color-beige,
+);
+
+/*-----------------------------------------------*/
+/*------------------ Typography -----------------*/
+/*-----------------------------------------------*/
+
+$font-size-base: 0.875rem;
+$h1-font-size: $font-size-base * 5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: 1.625rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 1rem;
+$strock-font-size: 5.625rem;
+
+$font-weight-base: 400;
+$font-weight-heading: 500;
+
+$line-height-base: 1.7143;
+
+/*------------------ Page Title -----------------*/
+$page-title-size: 3.125rem;
+$page-title-weight: 700;
+
+/*---------------- Section Title ----------------*/
+$section-title-size: $font-size-base * 2.5;
+$section-title-mobile-size: $h3-font-size;
+
+/*----------------- Block Title -----------------*/
+$block-title-size: $h6-font-size;
+
+/*------------------ Tab Title ------------------*/
+$content-title-font-size: 1rem;
+$content-title-line-height: 1.375;
+
+/*----------------- Text content ----------------*/
+$content-size: $font-size-base;
+$content-line-height: $line-height-base;
+
+/*----------------- Blockquote ------------------*/
+$blockquote-background: $lighter;
+$blockquote-font-size: $content-title-font-size;
+$blockquote-font-style: italic;
+$blockquote-font-weight: $font-weight-heading;
+$blockquote-line-height: $content-title-line-height;
+$blockquote-footer-font-size: $font-size-base;
+
+/*------------------ List style -----------------*/
+$list-item-title-size: $font-size-base;
+$list-item-size: $font-size-base;
+$list-item-line-height: 3.143;
+$color-dot-list-marker: $body-color-secondary;
+
+$checkbox-mark-size: 1.125rem;
+
+/*-----------------------------------------------*/
+/*-------------------- Layout -------------------*/
+/*-----------------------------------------------*/
+$grid-gutter-width: 1.875rem;
+$block-space: 2.125rem;
+$container-padding-x: $grid-gutter-width / 2;
+$grid-tablet-gutter-width: 1.5rem;
+$grid-mobile-gutter-width: 0.875rem;
+$full-section-padding-x: 3.75rem;
+
+/*-----------------------------------------------*/
+/*------------------ Compontents ----------------*/
+/*-----------------------------------------------*/
+$border-color: $color-gray-300;
+$border-radius: 0;
+$box-shadow: 0 0.625rem 1.5625rem 0 rgba($primary, 0.05);
+$popover-box-shadow: 0 0 1.5625rem 0 rgba($primary, 0.05);
+
+/*-------------------- Table --------------------*/
+// Table header
+$table-th-padding-x: 1.5rem;
+$table-th-padding-top: 1.625rem;
+$table-th-padding-bottom: 1.25rem;
+$table-th-bg-color: $primary;
+$table-th-text-color: $color-component-active;
+$table-th-font-size: 1rem;
+$table-th-font-weight: 500;
+
+// Table body
+$table-cell-padding-x: 1.5rem;
+$table-cell-padding-y: 1.53125rem;
+$table-border-width: 0;
+$table-border-color: transparent;
+
+$table-color: $body-color;
+$table-bg: transparent;
+
+$table-striped-color: $table-color;
+$table-striped-order: even;
+$table-striped-bg: $lighter;
+
+$table-variants: (
+  "primary": $color-white,
+  "secondary": shift-color($secondary, $table-bg-scale),
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+/*-------------------- Alert --------------------*/
+$alert-colors: (
+  "success": (
+    "bg": $success,
+    "color": $success-text,
+  ),
+  "info": (
+    "bg": $info,
+    "color": $info-text,
+  ),
+  "warning": (
+    "bg": $warning,
+    "color": $warning-text,
+  ),
+  "danger": (
+    "bg": $danger,
+    "color": $danger-text,
+  ),
+);
+
+$alert-border-radius: 0;
+$alert-padding-x: 1.875rem;
+$alert-padding-top: 1.6875rem;
+$alert-padding-bottom: 1.375rem;
+$alert-font-weight: 500;
+
+/*-------------------- Buttons --------------------*/
+// Close
+$btn-close-opacity: 1;
+$btn-close-width: 1.375rem;
+$btn-close-height: 1.375rem;
+$btn-close-bg: url("data:image/svg+xml,<svg width='23' height='22' viewBox='0 0 23 22' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.48881 15.5962L16.0954 4.98963L17.5096 6.40384L6.90302 17.0104L5.48881 15.5962Z' fill='#{$btn-close-color}'/><path d='M16.0954 17.7176L4.7817 6.40384L6.19592 4.98963L17.5096 16.3033L16.0954 17.7176Z' fill='#{$btn-close-color}'/></svg>");
+
+$btn-close-lg-width: 1rem;
+$btn-close-lg-height: 1rem;
+$btn-close-lg-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.414336 14.1421L14.5565 0L15.9707 1.41421L1.82855 15.5563L0.414336 14.1421Z' fill='#{$btn-close-color}'/><path d='M1.41421 0.142113L15.5563 14.2842L14.1421 15.6985L0 1.55633L1.41421 0.142113Z' fill='#{$btn-close-color}'/></svg>");
+$btn-close-lg-white-bg: url("data:image/svg+xml,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.414336 14.1421L14.5565 0L15.9707 1.41421L1.82855 15.5563L0.414336 14.1421Z' fill='#fff'/><path d='M1.41421 0.142113L15.5563 14.2842L14.1421 15.6985L0 1.55633L1.41421 0.142113Z' fill='#fff'/></svg>");
+
+$btn-close-xs-width: 0.625rem;
+$btn-close-xs-height: 0.625rem;
+$btn-close-xs-bg: url("data:image/svg+xml,<svg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z' fill='#{$body-color-secondary}'/><path d='M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z' fill='#{$body-color-secondary}'/></svg>");
+
+// Buttons
+$btn-box-shadow: none;
+$btn-border-radius: 0;
+$btn-font-size: 1rem;
+$btn-padding-x: 3.125rem;
+$btn-padding-top: 0.9375rem;
+$btn-padding-bottom: 0.75rem;
+
+$btn-padding-y-sm: 0.375rem;
+$btn-padding-x-sm: 1.25rem;
+$btn-border-radius-sm: $btn-border-radius;
+
+$btn-font-size-lg: $font-size-base;
+$btn-line-height-lg: 1.5rem;
+$btn-padding-y-lg: 0.5rem;
+$btn-padding-x-lg: 1.25rem;
+$btn-border-radius-lg: $btn-border-radius;
+
+$btn-focus-box-shadow: none;
+$btn-active-box-shadow: none;
+$btn-focus-width: 0;
+
+$link-decoration: none;
+
+$btn-round-width: 2.5rem;
+$btn-round-height: 2.5rem;
+
+$btn-round-sm-width: 2.1875rem;
+$btn-round-sm-height: 2.1875rem;
+
+$btn-transition: all 0.15s ease-in-out;
+
+$button-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "dark": $dark,
+  "red": $color-red-800,
+);
+
+$btn-beige: (
+  "border": $color-beige,
+  "color": $color-white,
+  "active": $color-white,
+);
+
+$btn-light: (
+  "border": $light,
+  "color": $primary,
+  "active": $primary,
+);
+
+// Button links
+$btn-link-active-bottom-width: 3.125rem;
+
+// Pagination Dots
+$swiper-pagination-width: 1.875rem;
+$swiper-pagination-dot-width: 0.375rem;
+$swiper-pagination-color: $color-dust;
+$swiper-pagination-active-color: $primary;
+
+// Scroll To Top
+$scroll-top-bg: $color-gray-200;
+
+/*---------------------- List ---------------------*/
+$list-margin-y: 0.375rem;
+$list-item-padding-y: 0.5rem;
+
+/*---------------------- Form ---------------------*/
+// Input
+$input-padding-y-sm: 0.75rem;
+$input-padding-x-sm: 1.125rem;
+$input-padding-y: 0.9375rem;
+$input-padding-x: 0.9375rem;
+$input-padding-y-lg: 1.125rem;
+$input-padding-x-lg: 1.3125rem;
+$input-font-size: $font-size-base;
+$input-line-height: $line-height-base;
+$input-color: $body-color;
+$input-placeholder-color: $gray-600;
+
+$input-border-width: 0.125rem;
+$input-border-color: $border-color;
+$input-border-radius: 0;
+$input-border-radius-sm: 0;
+$input-border-radius-lg: 0;
+
+$input-box-shadow: none;
+$input-focus-box-shadow: none;
+$box-shadow-inset: none;
+
+// Floating label
+$form-floating-height: add(3.625rem, $input-height-border);
+$form-floating-padding-y: $input-padding-y-lg;
+$form-floating-padding-x: $input-padding-x-lg;
+
+// Top left fixed label
+$fixed-label-background: $body-bg;
+$fixed-label-color: $body-color;
+$fixed-label-padding-right: 0.5rem;
+$fixed-label-padding-left: 0.375rem;
+$fixed-label-padding-y: 0.25rem;
+
+// Search field
+$search-field-arrow-width: 0.625rem;
+$hover-content-appear-animation: all 0.2s ease;
+$search-field-padding-y: 1rem;
+$search-field-padding-x: 1.25rem;
+
+$search-suggestion-margin-y: $list-margin-y;
+$search-suggestion-item-padding-y: $list-item-padding-y;
+
+// Select box
+$form-select-border-width: $input-border-width;
+$form-select-border-color: $border-color;
+$form-select-border-radius: $border-radius;
+$form-select-font-size: $input-font-size;
+$form-select-box-shadow: $box-shadow-inset;
+$form-select-bg-position: right $input-padding-x center;
+$form-select-sm-bg-position: right $input-padding-x-sm / 2 center;
+$form-select-indicator-color: $color-dark-purple;
+$form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='1' d='M2 5l6 6 6-6'/></svg>");
+$form-select-line-height: $line-height-base;
+
+// Multi select
+$select-list-margin-y: $list-margin-y;
+$select-item-padding-y: $list-item-padding-y;
+
+// Checkbox & Radio
+$form-check-input-width: 1rem;
+$form-check-input-height: 1rem;
+$checkbox-border-width: $input-border-width;
+$checkbox-color: $border-color;
+$checkbox-active-color: $primary;
+$form-check-padding-start: 1.625rem;
+$form-check-input-border: $input-border-width solid $checkbox-color;
+$form-check-input-border-radius: 0;
+$form-check-margin-bottom: 1rem;
+
+// Switch
+$form-switch-width: 3.75rem;
+$form-switch-height: 1.875rem;
+$form-switch-padding-start: $form-switch-width + 0.875rem;
+$form-switch-color: $secondary;
+$form-switch-bg-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color}'/></svg>");
+
+// tooltips
+$tooltip-opacity: 1;
+$tooltip-font-size: 0.8125rem;
+
+/*------------------ Accordions -----------------*/
+$accordion-padding-x: 1.875rem;
+$accordion-body-padding-top: 1.5rem;
+$accordion-body-padding-bottom: 1.75rem;
+$accordion-button-padding-x: $accordion-padding-x;
+$accordion-button-padding-top: 1.75rem;
+$accordion-button-padding-bottom: 1.125rem;
+$accordion-button-line-height: $content-title-line-height;
+$accordion-button-font-weight: $font-weight-heading;
+$accordion-icon-width: 0.875rem;
+$accordion-icon-height: 0.875rem;
+$accordion-border-color: $color-gray-200;
+$accordion-box-shadow: $popover-box-shadow;
+
+$accordion-button-active-bg: $color-white;
+$accordion-button-active-color: $heading-color;
+$accordion-icon-color: $heading-color;
+$accordion-icon-active-color: $heading-color;
+
+$accordion-icon-transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+
+/*--------------------- Tabs --------------------*/
+$nav-link-font-size: $content-title-font-size;
+$nav-link-font-weight: 500;
+$nav-link-line-height: $content-title-line-height;
+$nav-link-padding-x: 1.75rem;
+$nav-link-padding-top: 0.6875rem;
+$nav-link-padding-bottom: 0.4375rem;
+
+$nav-pills-border-radius: 0;
+$nav-pills-link-active-bg: $body-color;
+$nav-pills-link-active-color: $color-component-active;
+
+$nav-link-underline-transition-s: width 0.28s
+  cubic-bezier(0.47, 0, 0.745, 0.715);
+$nav-link-underline-transition-l: width 0.36s
+  cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$nav-tabs-border-color: transparent;
+$nav-tabs-border-width: 2px;
+$nav-tabs-link-padding-x: 1.5625rem;
+$nav-tabs-link-color: $body-color-secondary;
+$nav-tabs-link-active-color: $body-color;
+$nav-tabs-link-active-border: $body-color;
+
+/*----------------- Range Slider ----------------*/
+$slider-primary: $primary;
+$slider-track-bg: $light;
+$slider-border-radius: 10px;
+$slider-horizontal-width: 100%;
+$slider-line-height: 18px;
+$slider-bar-height: 6px;
+
+/*----------------- Progressbar -----------------*/
+$progress-text-color: $body-color;
+$progress-font-size: $font-size-base;
+$progress-bar-background: $light;
+$progress-bar-height: 0.625rem;
+$progress-bar-radius: 0.625rem;
+
+/*-----------------------------------------------*/
+/*-------------------- Header -------------------*/
+/*-----------------------------------------------*/
+// Mobile header
+$mobile-header-height: 3.75rem;
+$mobile-header-background: $body-bg;
+$mobile-header-z-index: $zindex-fixed;
+
+// Full width header
+$header-fullwidth-padding-xxl: 0 3.75rem;
+$header-fullwidth-padding: 0 1.75rem;
+
+$header-top-margin-xxl: 0 -3.75rem;
+$header-top-margin: 0 -1.75rem;
+
+// Header menu
+$navigation-item-padding-x: 1rem;
+$navigation-item-padding-x-sm: $navigation-item-padding-x * 0.7;
+$navigation-item-padding-y: 2px;
+$navigation-item-line-height: 1.5rem;
+
+$nav-link-color: $heading-color;
+$nav-link-active-bottom-width: 2em;
+
+$header-tools-item-padding-y: 0.25rem;
+$header-tools-item-padding-x: 0.5rem;
+$header-tools-item-space: 1rem;
+
+// Header Cart
+$header-cart-amount-bg: $color-beige;
+$header-cart-amount-color: $color-component-active;
+$header-cart-amount-font-size: 0.625rem;
+$header-cart-amount-width: 1rem;
+
+// Header search
+$header-search-color: $input-color;
+$header-search-placeholder: $input-placeholder-color;
+$header-search-box-padding: 0.75rem 1.25rem 0.625rem 0.875rem;
+$header-search-box-padding-r: 1.25rem;
+$header-search-box-border: 1px solid $border-color;
+$header-search-box-border-radius: 3px;
+$header-search-box-bg: $color-white;
+$header-search-bg-position: right 0 center;
+$header-search-bg-size: 12px;
+$header-search-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$header-search-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+
+// Search Popup
+$search-popup-padding-top: 3.75rem;
+$search-popup-padding-bottom: 3.5rem;
+$search-result-min-height: 23.75rem;
+$search-result-img-height: 18.75rem;
+$search-result-bottom-space: 2rem;
+
+$header-background: $body-bg;
+
+// Header Type 1
+$header-type-1-padding: 1.875rem 0 1.5rem 0;
+$header-type-1-logo-space: 2.1875rem;
+
+// Header Type 2
+$header-type-2-padding: 1.75rem 0;
+$header-type-2-padding-xxl: 1.875rem 0;
+
+// Header Type 3
+$header-type-3-padding: 2.625rem 0 1.5rem 0;
+$header-type-3-logo-space: 2.375rem;
+
+// Header Type 4
+$header-type-4-padding: 1.875rem 0 1.5rem 0;
+
+// Header Type 5
+$header-type-5-padding: 1.25rem 0;
+$header-type-5-logo-space: 2.75rem;
+$header-type-5-search-box-width: 26.625rem;
+
+// Header Type 6
+$header-type-6-middle-padding: 1.25rem 0;
+$header-type-6-nav-padding: 1.125rem 0 0.75rem $container-padding-x;
+$header-type-6-border-middle: 1px solid $border-color;
+$header-type-6-border-bottom: 1px solid $border-color;
+
+// Header Type 7
+$header-type-7-top-bg: $primary;
+$header-type-7-top-color: $color-white;
+$header-type-7-top-padding: 1.25rem 0;
+$header-type-7-bottom-bg: $secondary;
+$header-type-7-bottom-color: $color-white;
+$header-type-7-bottom-padding: 1.25rem 0 0.75rem;
+$header-type-7-logo-space: 2.75rem;
+$header-type-7-search-box-width: 26.625rem;
+
+// Sticky Header
+$header-sticky-box-shadow: 0 8px 25px 0 rgba(140, 152, 164, 0.15);
+
+// Categories Navigation
+$categories-nav-height: 2em;
+$categories-nav-title-border-radius: 4px 4px 0 0;
+$categories-nav-padding-y: 1.25rem;
+$categories-nav-padding-x: 3rem;
+$categories-nav-border: 1px solid $border-color;
+$categories-nav-border-radius: 0 0 4px 4px;
+$categories-nav-width: 20.5rem;
+
+/*-----------------------------------------------*/
+/*--------------------- Menu --------------------*/
+/*-----------------------------------------------*/
+// Menu configuration
+$menu-bg: $color-white;
+$menu-box-shadow: $box-shadow;
+$menu-link-padding-y: 0.5em;
+$menu-link-padding-x: 0;
+$menu-link-line-height: 1.5em;
+$sub-menu-title-color: $body-color-secondary;
+$sub-menu-link-color: $body-color;
+$menu-appear-animation: all 0.28s;
+
+// Mega menu
+$mega-menu-padding: 2.5rem 0 2.75rem;
+$mega-menu-border: 1px solid $light;
+
+// Box menu
+$box-menu-width: 49.6875rem;
+$box-menu-padding: 2.5rem 3.75rem 2rem;
+
+// Default menu
+$default-menu-width: 16.25rem;
+$default-menu-padding-x: 1.875rem;
+$default-menu-padding: 1.5rem $default-menu-padding-x 1rem;
+
+/*-----------------------------------------------*/
+/*-------------------- Footer -------------------*/
+/*-----------------------------------------------*/
+$footer-color: $body-color;
+$footer-middle-padding-top: 6.25rem;
+$footer-middle-padding-bottom: 4.75rem;
+
+$footer-menu-title-color: inherit;
+$footer-menu-link-color: inherit;
+
+$footer-social-link-padding-x: 1rem;
+$footer-social-link-color: inherit;
+$footer-social-link-active-color: $body-color-secondary;
+
+$svg-arrow-up-bg: url("data:image/svg+xml,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.49932 0.360778C7.22726 0.0887249 6.77274 0.0887249 6.49999 0.360778L0.206656 6.638C-0.0688853 6.91355 -0.0688853 7.3604 0.206656 7.63524C0.482197 7.91078 0.929749 7.91078 1.20529 7.63524L6.99997 1.85667L12.794 7.63594C13.0702 7.91148 13.517 7.91148 13.7933 7.63594C14.0688 7.3604 14.0688 6.91355 13.7933 6.6387L7.49932 0.360778Z' fill='#{$footer-color}'/></svg>");
+$svg-arrow-up-white-bg: url("data:image/svg+xml,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.49932 0.360778C7.22726 0.0887249 6.77274 0.0887249 6.49999 0.360778L0.206656 6.638C-0.0688853 6.91355 -0.0688853 7.3604 0.206656 7.63524C0.482197 7.91078 0.929749 7.91078 1.20529 7.63524L6.99997 1.85667L12.794 7.63594C13.0702 7.91148 13.517 7.91148 13.7933 7.63594C14.0688 7.3604 14.0688 6.91355 13.7933 6.6387L7.49932 0.360778Z' fill='white'/></svg>");
+$svg-arrow-down-bg: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_34_1038)"><path d="M5.57201 9.11914C5.8052 9.35233 6.1948 9.35233 6.42858 9.11914L11.8229 3.73866C12.059 3.50248 12.059 3.11947 11.8229 2.88389C11.5867 2.64771 11.2031 2.64771 10.9669 2.88389L6.00002 7.83695L1.03375 2.88329C0.796978 2.64711 0.413959 2.64711 0.177183 2.88329C-0.0589957 3.11947 -0.0589957 3.50248 0.177183 3.73806L5.57201 9.11914Z" fill="#{$body-color}"/></g><defs><clipPath id="clip0_34_1038"><rect width="12" height="12" fill="white" transform="translate(12 12) rotate(-180)"/></clipPath></defs></svg>');
+$svg-arrow-down-white-bg: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_34_1038)"><path d="M5.57201 9.11914C5.8052 9.35233 6.1948 9.35233 6.42858 9.11914L11.8229 3.73866C12.059 3.50248 12.059 3.11947 11.8229 2.88389C11.5867 2.64771 11.2031 2.64771 10.9669 2.88389L6.00002 7.83695L1.03375 2.88329C0.796978 2.64711 0.413959 2.64711 0.177183 2.88329C-0.0589957 3.11947 -0.0589957 3.50248 0.177183 3.73806L5.57201 9.11914Z" fill="white"/></g><defs><clipPath id="clip0_34_1038"><rect width="12" height="12" fill="white" transform="translate(12 12) rotate(-180)"/></clipPath></defs></svg>');
+
+$footer-type-1-bg: $light;
+$footer-type-1-color: $footer-color;
+
+// Footer Bottom
+$footer-bottom-border: 1px solid #cfcdcd;
+
+// Footer type 2 style
+$footer-type-2-bg: $color-white;
+$footer-type-2-color: $color-gray-500;
+$footer-type-2-menu-link-color: $color-gray-500;
+$footer-type-2-form-select-bg: url("data:image/svg+xml,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.49932 0.360778C7.22726 0.0887249 6.77274 0.0887249 6.49999 0.360778L0.206656 6.638C-0.0688853 6.91355 -0.0688853 7.3604 0.206656 7.63524C0.482197 7.91078 0.929749 7.91078 1.20529 7.63524L6.99997 1.85667L12.794 7.63594C13.0702 7.91148 13.517 7.91148 13.7933 7.63594C14.0688 7.3604 14.0688 6.91355 13.7933 6.6387L7.49932 0.360778Z' fill='#{$footer-type-2-color}'/></svg>");
+$footer-type-2-border-color: $light;
+
+// Footer type 2 dark style
+$footer-type-2-dark-bg: $dark;
+$footer-type-2-dark-color: $color-white;
+$footer-type-2-dark-menu-link-color: $light;
+$footer-type-2-dark-form-select-bg: url("data:image/svg+xml,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M7.49932 0.360778C7.22726 0.0887249 6.77274 0.0887249 6.49999 0.360778L0.206656 6.638C-0.0688853 6.91355 -0.0688853 7.3604 0.206656 7.63524C0.482197 7.91078 0.929749 7.91078 1.20529 7.63524L6.99997 1.85667L12.794 7.63594C13.0702 7.91148 13.517 7.91148 13.7933 7.63594C14.0688 7.3604 14.0688 6.91355 13.7933 6.6387L7.49932 0.360778Z' fill='#{$footer-type-2-dark-color}'/></svg>");
+$footer-type-2-dark-border-color: rgba($white, 0.15);
+
+// Newsletter style
+$newsletter-title-color: $primary;
+$newsletter-form-input-font-size: 0.875rem;
+$newsletter-form-input-border: $color-gray-300;
+$newsletter-form-button-bg: $primary;
+
+// Newsletter dark style
+$newsletter-dark-form-input-border: #353535;
+$newsletter-dark-form-input-bg: #353535;
+$newsletter-dark-form-input-color: $color-white;
+$newsletter-dark-form-input-placeholder-color: $light;
+$newsletter-dark-form-button-border: #5c5c5c;
+$newsletter-dark-form-button-bg: #5c5c5c;
+$newsletter-dark-form-button-color: $color-white;
+
+/*-----------------------------------------------*/
+/*----------------- Aside Popup -----------------*/
+/*-----------------------------------------------*/
+$aside-width: 26.25rem;
+$aside-padding-x: 2.5rem;
+$aside-header-bg: $lighter;
+
+/*-----------------------------------------------*/
+/*-------------------- Modal --------------------*/
+/*-----------------------------------------------*/
+$modal-inner-padding: 1.875rem $aside-padding-x;
+$modal-header-padding-y: 1.5rem;
+$modal-header-padding-x: $aside-padding-x;
+$modal-header-padding: $modal-header-padding-y $modal-header-padding-x; // Keep this for backwards compatibility
+$modal-header-bg: $lighter;
+$modal-header-border: 0;
+
+/*-----------------------------------------------*/
+/*----------------- Text content ----------------*/
+/*-----------------------------------------------*/
+// Text content positions
+$content-space: 1.875rem;
+$content-space-md: 2.5rem;
+$content-space-xl: 3.125rem;
+
+/*-----------------------------------------------*/
+/*------------------- Swatches ------------------*/
+/*-----------------------------------------------*/
+$swatch-color-width: 1.75rem;
+$swatch-color-height: $swatch-color-width;
+
+$card-swatch-color-width: 1.25rem;
+$card-swatch-color-height: $card-swatch-color-width;
+
+/*-----------------------------------------------*/
+/*------------------- Rating Stars --------------*/
+/*-----------------------------------------------*/
+$rating-star-color: #ccc;
+$rating-star_selected-color: #eeba36;
+$rating-star_overed-color: #ffe296;
+
+/*-----------------------------------------------*/
+/*------------------ Shop Checkout --------------*/
+/*-----------------------------------------------*/
+
+$swiper-scrollbar-drag: rgba(0, 0, 0, 0.5);

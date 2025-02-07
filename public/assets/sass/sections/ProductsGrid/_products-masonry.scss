@@ -1,0 +1,17 @@
+.products-masonry {
+  @include media-breakpoint-up(lg) {
+    height: 480px;
+
+    .pc__img-wrapper {
+      height: 100%;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    height: 640px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    height: 730px;
+  }
+}

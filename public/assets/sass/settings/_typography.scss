@@ -1,0 +1,333 @@
+@font-face {
+  font-family: "SofiaProBold";
+  src: url(/assets/fonts/sofia/SofiaProBold.woff);
+}
+
+body {
+  color: $body-color;
+  font-family: var(--font-family-base);
+  @include font-size($font-size-base);
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+}
+
+/*============================================*/
+/*================= Headings =================*/
+/*============================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $heading-color;
+  font-family: var(--font-heading);
+  font-weight: $font-weight-heading;
+}
+
+.font-special {
+  font-family: var(--font-special);
+}
+
+.font-courgette {
+  font-family: Courgette;
+}
+
+.fs-base,
+.form-title {
+  font-size: $font-size-base !important;
+}
+
+.font-sofia {
+  font-family: "SofiaProBold";
+}
+
+.third-color {
+  color: $third !important;
+}
+
+.white-color {
+  color: #fff !important;
+}
+
+.mark-grey-color {
+  -webkit-text-stroke-color: #c2c2c2;
+}
+
+.page-title {
+  font-weight: $page-title-weight;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $page-title-size;
+  }
+}
+
+.section-title {
+  font-size: $section-title-mobile-size;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $section-title-size;
+  }
+}
+
+.lh-30 {
+  line-height: 1.875rem !important;
+}
+
+.lh-2rem {
+  line-height: 2rem !important;
+}
+
+.block-title {
+  margin-bottom: 1rem;
+  font-size: $block-title-size;
+}
+
+/*============================================*/
+/*=================== Texts ==================*/
+/*============================================*/
+
+.character_markup {
+  display: none;
+
+  @include media-breakpoint-up(xxl) {
+    display: block;
+    position: absolute;
+    bottom: 5rem;
+    margin-left: -1.5em;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: $color-white;
+    color: transparent;
+    font-size: 7.5rem;
+    transform: rotate(90deg);
+    transform-origin: bottom right;
+    opacity: 0.8;
+
+    &.type2 {
+      transform: none;
+      font-size: 15.625rem;
+      -webkit-text-stroke-color: $secondary;
+      font-weight: 700;
+      bottom: 0;
+      line-height: 1;
+      left: auto;
+      margin: 0;
+      right: 0;
+      opacity: 0.3;
+      letter-spacing: 0.05em;
+      z-index: -1;
+    }
+  }
+}
+
+.content {
+  margin-bottom: 1.5rem;
+  font-size: $content-size;
+  line-height: $content-line-height;
+}
+
+.blockquote {
+  @include padding(2.75rem 2.375rem 2.3125rem 3.625rem);
+  background-color: $blockquote-background;
+}
+
+.blockquote__content {
+  margin-bottom: 0;
+  font-size: $blockquote-font-size;
+  font-style: $blockquote-font-style;
+  font-weight: $blockquote-font-weight;
+  line-height: $blockquote-line-height;
+}
+
+.blockquote__footer {
+  margin-top: 1.5rem;
+  color: $body-color-secondary;
+  font-size: $blockquote-footer-font-size;
+}
+
+.text-list {
+  padding-left: 1.25em;
+}
+
+.text-list__item {
+  line-height: $list-item-line-height;
+}
+
+.list_dot_darkgray {
+  ::marker {
+    color: $color-dot-list-marker;
+    font-size: 1rem;
+  }
+}
+
+.list-style_checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.text_dash {
+  position: relative;
+  padding-left: 3.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2.5rem;
+    height: 2px;
+    margin-top: -1px;
+    background-color: currentColor;
+    color: inherit;
+  }
+
+  &_half {
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 1.25rem;
+      height: 2px;
+      margin-top: -1px;
+      background-color: currentColor;
+      color: inherit;
+    }
+  }
+}
+
+.stroke-text {
+  --stroke-color: #{$heading-color};
+  --stroke-width: 1px;
+
+  color: $color-gray-200;
+  font-size: $strock-font-size * 0.4;
+  opacity: 0.4;
+  text-shadow: var(--stroke-width) 0 0 var(--stroke-color),
+    calc(var(--stroke-width) * -1) 0 0 var(--stroke-color),
+    0 var(--stroke-width) 0 var(--stroke-color),
+    0 calc(var(--stroke-width) * -1) 0 var(--stroke-color);
+
+  @include media-breakpoint-up(lg) {
+    --stroke-width: 2px;
+    font-size: $strock-font-size * 0.6;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: $strock-font-size;
+  }
+}
+
+.smooth-16 {
+  text-shadow: calc(var(--stroke-width) * 1) calc(var(--stroke-width) * 0) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * 0.3827) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * 0.7071) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * 0.9239) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * 1) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * 0.9239) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * 0.7071) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * 0.3827) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * -1) calc(var(--stroke-width) * 0) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * -0.9239) calc(var(--stroke-width) * -0.3827) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * -0.7071) calc(var(--stroke-width) * -0.7071) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * -0.3827) calc(var(--stroke-width) * -0.9239) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0) calc(var(--stroke-width) * -1) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0.3827) calc(var(--stroke-width) * -0.9239) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0.7071) calc(var(--stroke-width) * -0.7071) 0
+      var(--stroke-color),
+    calc(var(--stroke-width) * 0.9239) calc(var(--stroke-width) * -0.3827) 0
+      var(--stroke-color);
+}
+
+@include media-breakpoint-up(lg) {
+  .text-lg-right {
+    text-align: right !important;
+  }
+}
+
+.fs-12 {
+  font-size: 0.75rem !important;
+}
+
+.fs-13 {
+  font-size: 0.8125rem !important;
+}
+
+.fs-15 {
+  font-size: 0.9375rem !important;
+}
+.fs-16 {
+  font-size: 1rem !important;
+}
+
+.fs-18 {
+  @include font-size(1.125rem !important);
+}
+
+.fs-20 {
+  @include font-size(1.25rem);
+}
+
+.fs-22 {
+  @include font-size(1.375rem);
+}
+
+.fs-25 {
+  @include font-size(1.5625rem);
+}
+
+.fs-30 {
+  @include font-size(1.875rem);
+}
+
+.fs-35 {
+  @include font-size(2.1875rem);
+}
+
+.fs-40 {
+  @include font-size(2.5rem);
+}
+
+.fs-45 {
+  @include font-size(2.8125rem);
+}
+
+.fs-50 {
+  @include font-size(3.125rem);
+}
+
+.fs-70 {
+  @include font-size(4.375rem);
+}
+.fs-80 {
+  @include font-size(5rem);
+}
+
+.fs-100 {
+  @include font-size(6.25rem);
+}
+
+.fw-semi-bold {
+  font-weight: 600 !important;
+}
+
+th[align="right"] {
+  text-align: right;
+}

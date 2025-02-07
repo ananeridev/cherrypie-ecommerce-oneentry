@@ -1,0 +1,123 @@
+.header-mobile {
+  height: $mobile-header-height;
+  min-height: $mobile-header-height;
+  background-color: $mobile-header-background;
+  z-index: $mobile-header-z-index;
+
+  .logo {
+    margin: 0 auto;
+  }
+
+  .logo__image {
+    max-height: $mobile-header-height - .75rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+.header-mobile_sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: $header-sticky-box-shadow;
+}
+
+.header-mobile__navigation {
+  display: flex;
+  flex-direction: column;;
+  height: 0;
+  max-height: 0;
+  transition: max-height .35s, height .35s;
+  z-index: $mobile-header-z-index;
+
+  .search-field__input {
+    padding: 0.625rem 0.875rem 0.375rem;
+  }
+
+  .search-result {
+    max-height: 30rem;
+    overflow: auto;
+    background-color: $body-bg;
+    z-index: 1;
+
+    .product-card {
+      display: flex;
+      margin: 0.625rem 0;
+    }
+
+    .pc__img-wrapper {
+      width: 40%;
+      margin-right: 0.875rem;
+    }
+  }
+
+  .navigation__link {
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    font-size: $h6-font-size;
+
+    .flaticon {
+      font-size: 0.75rem;
+    }
+
+    &:after {
+      top: auto;
+      bottom: 0.5rem;
+      left: 0;
+    }
+  }
+
+  .form-select-sm {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+.mobile-nav-activator {
+  .nav-icon,
+  .btn-close-lg {
+    transition: all .24s;
+  }
+
+  .btn-close-lg {
+    transform: rotate(-90deg);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.mobile-menu-opened {
+  overflow: hidden;
+
+  .header-mobile {
+    z-index: $zindex-modal;
+  }
+
+  .header-mobile__navigation {
+    height: calc(100vh - 100%);
+    max-height: calc(100vh - 100%);
+    transition: max-height .35s, height .35s;
+    border-top: 1px solid $light;
+  }
+
+  .navigation__list {
+    left: 0;
+    transition: all .18s ease-in;
+  }
+
+  .mobile-nav-activator {
+    .nav-icon {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .btn-close-lg {
+      transform: rotate(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}

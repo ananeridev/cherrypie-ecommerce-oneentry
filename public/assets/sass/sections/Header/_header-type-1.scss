@@ -1,0 +1,45 @@
+.header-desk_type_1 {
+  padding: $header-type-1-padding;
+
+  .logo {
+    margin-right: $header-type-1-logo-space;
+  }
+
+  .header-tools {
+    margin-left: auto;
+    margin-right: -($header-tools-item-padding-x);
+  }
+}
+
+.header-fullwidth {
+  .header-desk_type_1 {
+    padding: 1.25rem 0;
+
+    .header-search {
+      padding-top: 0.6125rem;
+      padding-bottom: 0.5rem;
+      width: 21.5625rem;
+    }
+  }
+}
+
+.header-transparent-bg.header_sticky-bg_dark {
+  .header-desk_type_1 {
+    .header-search {
+      background-color: transparent;
+      border-color: transparent;
+      width: 15rem;
+
+      &__btn, &__input {
+        background-color: transparent;
+        color: $color-white;
+        margin: 0;
+      }
+
+      &__input::placeholder {
+        color: $color-white;
+        font-weight: 700;
+      }
+    }
+  }
+}

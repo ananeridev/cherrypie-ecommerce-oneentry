@@ -1,0 +1,11 @@
+.header-desk_type_4 {
+  padding: $header-type-4-padding;
+
+  &.header-desk_sm {
+    padding: 1.375rem 0;
+  }
+
+  .navigation {
+    margin: 0 auto;
+  }
+}

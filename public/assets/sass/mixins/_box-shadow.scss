@@ -1,0 +1,16 @@
+@mixin box-shadow($shadow...) {
+  $result: ();
+
+  @each $value in $shadow {
+    @if $value != null {
+      $result: append($result, $value, "comma");
+    }
+    @if $value == none and length($shadow) > 1 {
+      $result: none;
+    }
+  }
+
+  @if (length($result) > 0) {
+    box-shadow: $result;
+  }
+}

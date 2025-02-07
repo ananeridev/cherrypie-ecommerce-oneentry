@@ -1,0 +1,18 @@
+.products-grid {
+  .row {
+    --bs-gutter-x: #{$grid-mobile-gutter-width};
+
+    @include media-breakpoint-up(md) {
+      --bs-gutter-x: #{$grid-tablet-gutter-width};
+    }
+
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-x: #{$grid-gutter-width};
+    }
+  }
+
+  .nav {
+    margin-left: -var(--bs-gutter-x);
+    margin-right: -var(--bs-gutter-x);
+  }
+}

@@ -1,0 +1,31 @@
+.progress_uomo {
+  height: $progress-bar-height;
+  border-radius: $progress-bar-radius;
+  background-color: $progress-bar-background;
+  overflow: visible;
+
+  &_small {
+    height: 0.25rem;
+  }
+
+  &_medium {
+    height: 0.375rem;
+  }
+
+  .progress-bar {
+    position: relative;
+    border-radius: $progress-bar-radius;
+    overflow: visible;
+
+    &::before {
+      content: attr(aria-valuenow);
+      display: block;
+      position: absolute;
+      top: -2em;
+      right: 0;
+      transform: translateX(50%);
+      color: $progress-text-color;
+      font-size: $progress-font-size;
+    }
+  }
+}

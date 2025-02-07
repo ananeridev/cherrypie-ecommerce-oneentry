@@ -1,0 +1,21 @@
+@mixin create-menu($padding, $width: 100%) {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 0;
+  width: $width;
+  padding: $padding;
+  background-color: $menu-bg;
+  box-shadow: $menu-box-shadow;
+  z-index: $zindex-dropdown;
+  transition: $menu-appear-animation;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  .navigation__item:hover & {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}

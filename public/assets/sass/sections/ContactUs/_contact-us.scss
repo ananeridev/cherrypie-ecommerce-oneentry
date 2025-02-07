@@ -1,0 +1,21 @@
+.contact-us {
+  .page-title {
+    font-size: 2.1875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  
+  &__form {
+    input.form-control {
+      height: 3.4375rem;
+    }
+
+    .btn {
+      min-width: 12.5rem;
+      height: 3.75rem;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+    }
+  }
+}

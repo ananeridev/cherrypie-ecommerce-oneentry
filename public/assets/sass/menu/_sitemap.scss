@@ -1,0 +1,41 @@
+.sitemap {
+  height: 100vh;
+  background-color: $menu-bg;
+  z-index: $zindex-fixed;
+}
+
+.sitemap__bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sitemap__links {
+  .modal-header {
+    background: $modal-header-bg;
+    border: $modal-header-border;
+  }
+
+  .modal-body {
+    ::-webkit-scrollbar {
+      margin-right: 1.25rem;
+      width: .25rem;
+      background-color: $body-bg;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: .25rem;
+      background-color: $border-color;
+    }
+  }
+
+  .nav {
+    padding-left: calc(var(--#{$variable-prefix}gutter-x) / 2);
+  }
+
+  .nav-link_rline {
+    padding-left: 0;
+    font-size: $h4-font-size;
+    line-height: 1.5em;
+  }
+}

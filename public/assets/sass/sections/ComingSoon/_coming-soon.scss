@@ -1,0 +1,88 @@
+body.coming-soon-page {
+  background: url(/assets/images/pattern_bg.png) center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .header {
+    background: transparent;
+  }
+}
+
+.coming-soon {
+  // position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+
+  .content {
+    width: 46.875rem;
+    max-width: 100%;
+    text-align: center;
+
+    h2 {
+      @include font-size(6.25rem);
+      font-weight: $font-weight-bold;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      width: 29.75rem;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .js-countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    @include media-breakpoint-up(md) {
+      gap: 3.625rem;
+    }
+
+    .countdown-num {
+      font-size: 1.875rem;
+    }
+
+    .countdown-word {
+      font-size: 1rem;
+    }
+
+    .countdown-unit {
+      position: relative;
+      min-width: 3.625rem;
+
+      &:before {
+        content: ":";
+        display: block;
+        position: absolute;
+        font-size: 1.875rem;
+        left: -1rem;
+
+        @include media-breakpoint-up(md) {
+          left: -2rem;
+        }
+      }
+
+      &:first-child:before {
+        display: none;
+      }
+    }
+  }
+
+  .block-newsletter .block-newsletter__form {
+    height: 3.75rem;
+
+    button {
+      font-weight: $font-weight-base;
+      font-size: 0.875rem;
+    }
+  }
+}

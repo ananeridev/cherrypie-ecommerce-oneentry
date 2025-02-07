@@ -1,0 +1,112 @@
+$move-distance: 0.625rem;
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+  }
+}
+
+.animate {
+  transition: all ease-in 0.5s;
+  transition: all cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.5s;
+}
+
+.animate_fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+// Animate right to left
+.animate_rtl {
+  position: relative;
+  right: -2.5rem;
+}
+
+// Animate bottom to top
+.animate_btt {
+  position: relative;
+  bottom: -2.5rem;
+}
+
+@for $i from 1 through 10 {
+  .animate_delay-#{$i} {
+    @include animation-delay($i);
+  }
+}
+
+.swiper-slide-active {
+  .animate_fade {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .animate_rtl {
+    right: 0;
+  }
+
+  .animate_btt {
+    bottom: 0;
+  }
+}
+
+.anim_appear-fade {
+  transition: $hover-content-appear-animation;
+  font-size: $font-size-base;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+
+  .product-card:hover & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.anim_appear-bottom {
+  bottom: $move-distance * -1;
+  transition: $hover-content-appear-animation;
+  font-size: $font-size-base;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+
+  .product-card:hover & {
+    bottom: $move-distance;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.anim_appear-right {
+  right: $move-distance * -1;
+  transition: $hover-content-appear-animation;
+  font-size: $font-size-base;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+
+  .product-card:hover & {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.anim_appear-center {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: $hover-content-appear-animation;
+  font-size: $font-size-base;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+
+  .product-card:hover & {
+    opacity: 1;
+    visibility: visible;
+  }
+}

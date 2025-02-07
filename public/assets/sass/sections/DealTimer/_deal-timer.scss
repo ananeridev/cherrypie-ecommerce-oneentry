@@ -1,0 +1,87 @@
+.deal-timer {
+  --countdown-space: 1.125rem;
+
+  min-height: 19.375rem;
+  margin: 0 $container-padding-x;
+  padding: 2rem 1rem;
+
+  .countdown-unit {
+    position: relative;
+    min-width: 4.375rem;
+    padding-right: calc(var(--countdown-space) * 2);
+    font-size: $h5-font-size;
+    line-height: 1;
+  }
+
+  .countdown-word {
+    font-size: $font-size-base;
+  }
+
+  .day,
+  .hour,
+  .min {
+    &:after {
+      content: ':';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: var(--countdown-space);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    min-height: 25rem;
+
+    .countdown-unit {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    min-height: 31.25rem;
+    padding: 2.5rem 0;
+
+    .countdown-unit {
+      min-width: 6.25rem;
+      font-size: 1.875rem;
+    }
+
+    .countdown-word {
+      font-size: $h6-font-size;
+    }
+  }
+
+  @include media-breakpoint-up(xxl) {
+    --countdown-space: 1.375rem;
+
+    min-height: 37.5rem;
+    margin: 0 $full-section-padding-x;
+  }
+}
+
+.hot-deals {
+  --countdown-space: 0.875rem;
+
+  .countdown-unit {
+    position: relative;
+    padding-right: calc(var(--countdown-space) * 2);
+    line-height: 1;
+    font-size: 1.125rem;
+  }
+
+  .countdown-word {
+    font-size: $font-size-base;
+  }
+
+  .day,
+  .hour,
+  .min {
+    &:after {
+      content: ':';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: var(--countdown-space);
+    }
+  }
+}

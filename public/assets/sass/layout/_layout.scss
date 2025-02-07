@@ -1,0 +1,193 @@
+// Row
+//
+// Rows contain your columns.
+
+@if $enable-grid-classes {
+  .row {
+    @include make-row();
+
+    > * {
+      @include make-col-ready();
+    }
+  }
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@if $enable-grid-classes {
+  @include make-grid-columns();
+}
+
+body {
+  ::-webkit-scrollbar {
+    margin-right: 1.25rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    background-color: $body-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+    background-color: $border-color;
+  }
+}
+
+.snap main {
+  @include media-breakpoint-down(lg) {
+    overflow-x: hidden;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.block {
+  margin: $block-space 0;
+}
+
+.full-width_padding {
+  overflow: hidden;
+
+  @include media-breakpoint-up(xxl) {
+    width: 100%;
+    padding: 0 $full-section-padding-x;
+  }
+}
+
+.full-width_padding-20 {
+  width: 100%;
+  padding: 0 1.25rem;
+}
+
+.full-width_border {
+  @include media-breakpoint-down(xxl) {
+    border: 0 !important;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    padding: 0.625rem;
+    border-style: solid;
+  }
+}
+
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transition: all 0.32s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  background-color: rgba($color: $color-gray-900, $alpha: 0.4);
+  opacity: 0;
+  visibility: hidden;
+  z-index: $zindex-modal-backdrop;
+}
+
+.page-overlay_visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollTop {
+  position: fixed !important;
+  right: 0;
+  bottom: 3.375rem;
+  z-index: $zindex-fixed;
+  width: 45px;
+  height: 45px;
+  background-color: $scroll-top-bg;
+  background-image: escape-svg($svg-arrow-up-bg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  clip: auto !important;
+  transition: $menu-appear-animation;
+
+  @include media-breakpoint-up(md) {
+    bottom: 0;
+  }
+}
+
+.mw-1620 {
+  width: 1620px !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+.mw-1170 {
+  width: 1200px !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+.mw-930 {
+  width: 58.125rem !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+.w-740 {
+  width: 46.25rem;
+  max-width: 100%;
+}
+
+.w-100px {
+  width: 6.25rem;
+}
+
+.h-100px {
+  height: 6.25rem;
+}
+
+.gradient-bg {
+  background-image: url(/assets/images/home/demo3/slider_bg.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.gradient-bg-10 {
+  background-image: url(/assets/images/home/demo10/slider_bg.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: auto 84rem;
+
+  @include media-breakpoint-up(lg) {
+    background-size: 100% auto;
+  }
+}
+
+.col-xl-20per {
+  @include media-breakpoint-up(xl) {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+}
+
+.col-xl-40per {
+  @include media-breakpoint-up(xl) {
+    flex: 0 0 auto;
+    width: 40%;
+  }
+}
+
+.col-xl-60per {
+  @include media-breakpoint-up(xl) {
+    flex: 0 0 auto;
+    width: 60%;
+  }
+}
+
+.col-xl-80per {
+  @include media-breakpoint-up(xl) {
+    flex: 0 0 auto;
+    width: 80%;
+  }
+}
+
+.gutters-20 .row {
+  --bs-gutter-x: 1.25rem;
+}

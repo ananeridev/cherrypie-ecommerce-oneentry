@@ -1,0 +1,46 @@
+.google-map {
+  &__wrapper {
+    height: 34.375rem;
+    position: relative;
+
+    > div {
+      height: 100%;
+    }
+  }
+
+  &__marker-detail {
+    // position: absolute;
+    // left: 10rem;
+    // top: 50%;
+    // transform: translateY(-50%);
+    padding: 1.6875rem 1.875rem 1.25rem;
+    width: auto;
+    height: auto !important;
+    background-color: #fff;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    // @include media-breakpoint-down(md) {
+    //   display: none;
+    // }
+
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .btn-close {
+      background: none;
+      padding: 0;
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+    }
+
+    &__content {
+      a {
+        display: none;
+      }
+    }
+  }
+}

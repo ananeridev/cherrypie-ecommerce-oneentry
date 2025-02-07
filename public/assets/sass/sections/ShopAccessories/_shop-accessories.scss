@@ -1,0 +1,29 @@
+.shop-acs__select {
+  padding-right: $input-padding-y;
+  background-position: right center;
+  cursor: pointer;
+  padding-left: 0;
+  box-shadow: none !important;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.shop-asc__seprator {
+  width: 2px;
+  height: 22px;
+}
+
+.aside-filters {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.shop-acs {
+  .multi-select__actor {
+    padding-right: $input-padding-x * 3;
+  }
+
+  .filters-container {
+    border: $categories-nav-border;
+  }
+}

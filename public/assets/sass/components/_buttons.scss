@@ -1,0 +1,478 @@
+//
+// Base styles
+//
+
+.btn {
+  display: inline-block;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
+  line-height: $btn-line-height;
+  color: $body-color;
+  text-align: center;
+  text-decoration: if($link-decoration == none, null, none);
+  white-space: $btn-white-space;
+  vertical-align: middle;
+  cursor: if($enable-button-pointers, pointer, null);
+  user-select: none;
+  background-color: $body-bg;
+  border: $btn-border-width solid transparent;
+  @include button-size(
+    $btn-padding-y,
+    $btn-padding-x,
+    $btn-font-size * 0.875,
+    $btn-border-radius
+  );
+  @include transition($btn-transition);
+  font-size: $btn-font-size * 0.875;
+  @include media-breakpoint-down(sm) {
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+  }
+  padding-top: $btn-padding-top * 0.75;
+  padding-bottom: $btn-padding-bottom * 0.75;
+
+  &:hover {
+    color: $body-color;
+    text-decoration: if($link-hover-decoration == underline, none, null);
+  }
+
+  &-55 {
+    height: 3.4375rem;
+  }
+
+  &-50 {
+    height: 3.125rem;
+  }
+
+  &-45 {
+    height: 2.8125rem;
+  }
+
+  &-40 {
+    height: 2.5rem;
+  }
+
+  .btn-check:focus + &,
+  &:focus {
+    outline: 0;
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  .btn-check:checked + &,
+  .btn-check:active + &,
+  &:active,
+  &.active {
+    @include box-shadow($btn-active-box-shadow);
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  fieldset:disabled & {
+    pointer-events: none;
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: $btn-font-size;
+    padding-top: $btn-padding-top;
+    padding-bottom: $btn-padding-bottom;
+  }
+}
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $button-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+
+  .btn-hover-#{$color} {
+    &:hover {
+      background-color: $value;
+      color: $white;
+    }
+  }
+}
+
+.btn-beige {
+  $border: map-get($btn-beige, "border");
+  $background: $border;
+  $color: map-get($btn-beige, "color");
+  $active-color: map-get($btn-beige, "active");
+  @include button-variant(
+    $background,
+    $border,
+    $color,
+    tint-color($background, 10%),
+    tint-color($border, 10%),
+    $active-color
+  );
+}
+
+.btn-outline-beige {
+  $border: map-get($btn-beige, "border");
+  $background: $border;
+  $color: $border;
+  $active-color: map-get($btn-beige, "active");
+  @include button-outline-variant(
+    $color,
+    $active-color,
+    $background,
+    $border,
+    $active-color
+  );
+}
+
+.btn-light {
+  $border: map-get($btn-light, "border");
+  $background: $border;
+  $color: map-get($btn-light, "color");
+  $active-color: map-get($btn-light, "active");
+  @include button-variant(
+    $background,
+    $border,
+    $color,
+    tint-color($background, 10%),
+    tint-color($border, 10%),
+    $active-color
+  );
+}
+
+.btn-outline-light {
+  $border: map-get($btn-light, "border");
+  $background: $border;
+  $color: map-get($btn-light, "color");
+  $active-color: map-get($btn-light, "active");
+  @include button-outline-variant(
+    $color,
+    $active-color,
+    $background,
+    $border,
+    $active-color
+  );
+  border-color: $border;
+}
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  color: $btn-link-color;
+  font-weight: $font-weight-normal;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $btn-link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $btn-link-disabled-color;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    max-width: 100%;
+    height: 2px;
+    transition: $nav-link-underline-transition-s;
+    background-color: currentColor;
+  }
+
+  &:hover,
+  &.btn-link_active {
+    &:after {
+      width: $btn-link-active-bottom-width;
+    }
+  }
+
+  &.default-underline {
+    &:after {
+      width: $btn-link-active-bottom-width;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.btn-link_lg {
+  &:hover,
+  &.btn-link_active {
+    &:after {
+      width: calc(100% - 1rem);
+    }
+  }
+
+  &.default-underline {
+    &:after {
+      width: 86%;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.btn-link_md {
+  &:hover,
+  &.btn-link_active {
+    &:after {
+      width: 70%;
+    }
+  }
+
+  &.default-underline {
+    &:after {
+      width: 70%;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.btn-link_sm {
+  &:hover,
+  &.btn-link_active {
+    &:after {
+      width: 45%;
+    }
+  }
+
+  &.default-underline {
+    &:after {
+      width: 45%;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.btn-link_f {
+  &:hover,
+  &.btn-link_active {
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+// Round button
+.btn-round {
+  width: $btn-round-width * 3 / 4;
+  height: $btn-round-width * 3 / 4;
+  padding: 0;
+  border-radius: 100%;
+
+  @include media-breakpoint-up(md) {
+    width: $btn-round-width;
+    height: $btn-round-width;
+  }
+}
+
+.btn-round-sm {
+  width: $btn-round-sm-width;
+  height: $btn-round-sm-width;
+  padding: 0;
+  border-radius: 100%;
+}
+
+.btn-square {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  padding: 0;
+}
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+  @include button-size(
+    $btn-padding-y-lg,
+    $btn-padding-x-lg,
+    $btn-font-size-lg,
+    $btn-border-radius-lg
+  );
+  line-height: $btn-line-height-lg;
+}
+
+.btn-sm {
+  @include button-size(
+    $btn-padding-y-sm,
+    $btn-padding-x-sm,
+    $btn-font-size-sm,
+    $btn-border-radius-sm
+  );
+}
+
+//
+// Nav icon
+//
+
+.nav-icon {
+  display: block;
+  fill: currentColor;
+}
+
+// Icon button
+.btn-icon {
+  border: 0;
+  background-color: transparent;
+}
+
+// Text links with underline
+.btn-text {
+  text-decoration: underline;
+}
+
+// Carousel Dots
+.swiper-pagination-bullet {
+  position: relative;
+  width: $swiper-pagination-width;
+  height: $swiper-pagination-width;
+  margin: 0 4px;
+  border: 2px solid currentColor;
+  background-color: transparent;
+  color: transparent;
+  opacity: 1;
+  outline: none;
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $swiper-pagination-dot-width;
+    height: $swiper-pagination-dot-width;
+    margin-top: -($swiper-pagination-dot-width / 2);
+    margin-left: -($swiper-pagination-dot-width / 2);
+    border-radius: 100%;
+    background-color: currentColor;
+    color: $swiper-pagination-color;
+    content: "";
+  }
+
+  &:first-child {
+    overflow: hidden;
+    margin-left: 5px;
+  }
+}
+
+.swiper-pagination-bullets.dark-bullet .swiper-pagination-bullet:after {
+  color: #222;
+}
+
+.swiper-pagination-bullet-active {
+  color: $swiper-pagination-active-color;
+
+  &:after {
+    color: inherit;
+  }
+}
+
+.swiper-pagination-white .swiper-pagination-bullet-active {
+  color: #fff;
+}
+
+.swiper-pagination-bullets.theme-color {
+  .swiper-pagination-bullet-active {
+    color: var(--theme-color);
+  }
+}
+
+// Swatches
+// Color swatches
+.swatch-color {
+  display: block;
+  position: relative;
+  width: $swatch-color-width;
+  height: $swatch-color-height;
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+
+  &:after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin-top: -0.5rem;
+    margin-left: -0.5rem;
+    border-radius: 100%;
+    background-color: currentColor;
+    color: inherit;
+    content: "";
+  }
+
+  &.swatch_active {
+    border: 2px solid $primary;
+  }
+
+  .hover-container & {
+    margin: 0;
+  }
+}
+
+// Size swatches
+.swatch-size {
+  &.swatch_active {
+    background-color: $light;
+  }
+}
+
+// Filter tags
+.filter-tag {
+  padding: 0 1rem;
+  border: 0;
+  background-color: $light;
+  font-size: 11px;
+  line-height: 1.875rem;
+
+  &.swatch_active {
+    display: none !important;
+  }
+}

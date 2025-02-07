@@ -1,0 +1,23 @@
+.checkbox__mark {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: $checkbox-mark-size;
+  height: $checkbox-mark-size;
+  margin-right: .625rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 66.666667%;
+}
+
+.checkbox__mark_gray {
+  background-color: $color-dot-list-marker;
+}
+
+.checkbox__mark_round {
+  border-radius: 100%;
+}
