@@ -1,4 +1,6 @@
+<p align="center">
 <img width="213" alt="Screenshot 2025-02-07 at 10 47 12" src="https://github.com/user-attachments/assets/186372cb-bc9e-42af-8c74-bf37c6dd0fe2" />
+</p>
 
 ## About the project
 
